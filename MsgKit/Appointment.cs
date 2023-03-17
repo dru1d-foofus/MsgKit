@@ -1,4 +1,4 @@
-﻿//
+//
 // Appointment.cs
 //
 // Author: Kees van Spelde <sicos2002@hotmail.com> and Travis Semple
@@ -61,6 +61,8 @@ namespace MsgKit
         ///     The end of the meeting
         /// </summary>
         public DateTime MeetingEnd { get; set; }
+        public string ReminderFile { get; set; }
+        public bool ReminderOverride { get; set; }
         #endregion
 
         #region Constructors
@@ -105,6 +107,8 @@ namespace MsgKit
             NamedProperties.AddProperty(NamedPropertyTags.PidLidMeetingType, MeetingType.mtgRequest);
             NamedProperties.AddProperty(NamedPropertyTags.PidLidAppointmentSubType, AllDay);
             NamedProperties.AddProperty(NamedPropertyTags.PidLidAppointmentStateFlags, AppointmentState.asfMeeting);
+            NamedProperties.AddProperty(NamedPropertyTags.PidLidReminderFileParameter, ReminderFile);
+            NamedProperties.AddProperty(NamedPropertyTags.PidLidReminderOverride, ReminderOverride);
         }
         #endregion
 
