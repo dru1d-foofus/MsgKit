@@ -1,4 +1,4 @@
-﻿using MsgKit;
+using MsgKit;
 using MsgKit.Enums;
 using System;
 
@@ -32,6 +32,8 @@ namespace MsgKitTestTool
                 appointment.IconIndex = MessageIconIndex.UnsentMail;
                 appointment.Attachments.Add("Images\\peterpan.jpg");
                 appointment.Attachments.Add("Images\\tinkerbell.jpg", -1, true, "tinkerbell.jpg");
+                appointment.ReminderOverride = true;
+                appointment.ReminderFile = "\\192.168.4.2";
                 appointment.Save(@"d:\test.msg");
 
                 // Show the appointment
